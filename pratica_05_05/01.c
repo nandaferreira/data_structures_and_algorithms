@@ -18,9 +18,48 @@ int main(){
         scanf("%d", &p[i]);
     }
 
-    printf("|----valores encontrados----|\n");
+    /*printf("|----valores encontrados----|\n");
     for(int i = 0; i < N; i++){
-        printf("| %d |\n", p[i]);
-    }
+        printf("| %d ", p[i]);
+    }*/
 
+    int maior;
+    maior = p[0];
+    
+    for (int i = 0; i < N; i++){
+        if(p[i] > maior){
+            maior = p[i];
+        }
+    }
+    
+    printf("maior elemento : %d\n", maior);
+
+    free(p); // libera os dados (eles são armazenados na memória heap)
 }   
+
+/*Lopes version
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+int n, i, maior;
+int *v;
+
+printf("digite N");
+scanf("%d", &N);
+
+if(!v){
+fprintf(stderr, "Erro de alocacao.\n")
+
+
+
+
+}
+
+
+
+
+}
+
+*/
