@@ -21,7 +21,7 @@ void selectionSort(int *vet, int tam){
     int i, j, menor, troca;
 
     for(i = 0; i < tam -1; i++){
-        menor = i; // considera a posicao atual como o menor e já "separa" o vetor, considerando que essa parte está ordenada. 
+        menor = i; // considera a posicao atual como o menor e já "separa" o vetor, considerando que essa parte está ordenada 
         
         for(j = i+1; j < tam; j++){ // itera sobre a parte direita do vetor separado pra comparar com o dito menor; tam-1 pra nao extrapolar memoria quando chegar no ultimo elemento
             if(vet[j] < vet[menor]){
@@ -35,7 +35,6 @@ void selectionSort(int *vet, int tam){
             }
     }
 }
-
 
 int main(){
     int tamanho;
@@ -60,7 +59,7 @@ int main(){
         scanf("%d", &vetor[i]);
     }
     
-    //pra verificar a ordenação, tenho que assumir que o vetor tá ordenado, utilizando uma variavel de controle (flag)
+    //pra verificar a ordenação, tenho que assumir que o vetor tá ordenado, por isso uma variavel de controle (flag)
 
     int ordenado = 1;
 
@@ -73,18 +72,23 @@ int main(){
     }
 
     if(ordenado == 1){
-        printf("====valores encontrados====\n");
+        printf("\n====valores encontrados====\n");
         for(int i = 0; i < tamanho; i++){
             printf("|%d ", vetor[i]);
         }
     }else{
-        printf("====ordenando vetor====\n");
+        printf("\n====ordenando vetor====\n");
         
         selectionSort(vetor,  tamanho);
         
         for(int i = 0; i < tamanho; i++){
             printf("|%d", vetor[i]);
         }
+        printf("\n");
+        printf("\nORDENADO\n");
     }
+
+    free(vetor);
+    return 0;
 }
 
