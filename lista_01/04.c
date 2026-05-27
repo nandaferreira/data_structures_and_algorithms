@@ -1,7 +1,3 @@
-/*Escreva um algoritmo que receba um vetor ordenado e um número extra e 
-insira esse número na sua posição correta no vetor ordenado, deslocando 
-os outros números se necessário.*/
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -9,10 +5,9 @@ void insertionSort(int *v, int tam);
 void insertionSort(int *v, int tam){
     int i, j, aux;
 
-    for(i = 0; i < tam; i++){
+    for(i = 1; i < tam; i++){
         aux = v[i];
-        
-        for(j = i; j > 0 && (aux < v[j-1]); j--){
+        for(j = i; j > 0 && aux < v[j-1]; j--){
             v[j] = v[j-1];
         }
         v[j] = aux;
@@ -22,7 +17,7 @@ void insertionSort(int *v, int tam){
 
 int main(){
 
-    int i, tamanho;
+    int i, tamanho, extra = 0;
     int *vetor;
 
     printf("tamanho do vetor: \n");
@@ -42,8 +37,13 @@ int main(){
         scanf("%d", &vetor[i]);
     }
 
+    printf("entre com um valor a acrescentar: \n");
+    scanf("%d", &extra);
+
+    vetor[tamanho] = extra;
+
     int ordenado = 1;
-    for(i = 0; i < tamanho - 1; i++){
+    for(i = 0; i < tamanho; i++){
         if(vetor[i] > vetor[i +1]){
             ordenado = 0;
             break;
@@ -51,18 +51,20 @@ int main(){
     }
 
     if(ordenado == 1){
-        for(i = 0; i < tamanho; i++){
+        for(i = 0; i < (tamanho +1); i++){
             printf("|%d|", vetor[i]);
         }
     }else{
         printf("===ordenando vetor===\n");
-        insertionSort(vetor, tamanho);
+        insertionSort(vetor, tamanho + 1);
 
-        for(i = 0; i < tamanho; i++){
+        for(i = 0; i < (tamanho+1); i++){
             printf("|%d|", vetor[i]);
         }
+        printf("\n");
     }
 
+    free(vetor);
     return 0;
 }
 

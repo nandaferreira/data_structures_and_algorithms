@@ -1,4 +1,3 @@
-/*Escreva um algoritmo que ordene de maneira decrescente (do maior para o menor)*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
