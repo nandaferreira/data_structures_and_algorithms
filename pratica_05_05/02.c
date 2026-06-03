@@ -2,6 +2,12 @@
 usando alocação dinâmica.  Os valores de N e M deverão ser lidos. Em seguida 
 leia valores para a matriz e calcule a soma dos elementos da matriz. */
 
+//pra ter soma de matrizes, as dimensoes devem ser iguais (mesmo num de linhas e colunas)
+//faze uma verificacao pra ver se n é igual a m
+    // se sim -> soma cada elemento de cada posicao correspondente
+    // se não -> imprima mensagem de erro e saia do programa
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -37,7 +43,17 @@ int main(){
         }
     }
 
-    printf("============================\n");
+    printf("====soma das matrizes====\n");
+    int soma = 0;
+
+    for(i = 0; i < N; i++){
+        for(j = 0; j < M; j++){
+            soma = soma + mat[i][j];
+        }
+    }
+    printf("soma de elementos da matriz: %d\n", soma);
+
+    /*printf("============================\n");
     printf("========Matriz N X M========\n");
 
     for(i = 0; i < N; i++){
@@ -46,12 +62,12 @@ int main(){
         }
         printf("\n");
     }
-
-    for(i=0; i < N; i++){
-        free(mat);
+*/
+    for(i=0; i< N; i++){
+        free(mat[i]); //libera cada linha alocada    
     }
 
-
+    free(mat);
     return 0;
 }
 
@@ -60,8 +76,9 @@ int main(){
 
 
 
-
 //=================================
+
+//lopes version/
 
 /*int main(){
     int i, j, M, N;

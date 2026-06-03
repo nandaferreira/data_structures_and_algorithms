@@ -9,7 +9,18 @@ Algoritmos de ordenação são amplamente utilizados para organizar dados em
 aplicações computacionais. Diferentes algoritmos possuem estratégias distintas de
 ordenação e custos computacionais variados.
 Nesta prática serão analisados os algoritmos _Bubble Sort_, _Selection Sort_, _Insertion Sort_, _QuickSort_ e _MergeSort_.
+***
+Para cada exercício:
+    - analisar a complexidade computacional (análise matemática e empírica)
+    - desenvolver raciocínio sobre estabilidade e eficiência
 
+**Algoritmos analisados**
+1. Bubble Sort
+2. Selection Sort
+3. Insertion Sort
+4. Quick Sort
+5. Merge Sort
+***
 
 ### exc 3.1
 // j < (n-i-1)
