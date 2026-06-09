@@ -1,3 +1,8 @@
+// complexity: O(n^2)
+
+/*Seleciona o maior elemento para ocupar sua posição no array. Procura o menor/maior valor do array e coloca na primeira posição (a depender)
+se a ordenação é crescente ou não. Divide o array em dois: a parte ordenada (esquerda do elemento analisado) e parte não ordenada (direita).
+Descarta-se a primeira posição e continua*/
 #include <stdio.h>
 #include <stdlib.h>
 

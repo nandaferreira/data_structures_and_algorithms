@@ -1,0 +1,2 @@
+/*Algoritmo RECURSIVO que usa da ideia de "dividir para conquistar" para ordenar os dados. O algoritmo divide os dados em conjuntos cada vez menores
+para depois ordená-los e combiná-los por meio de intercalação (merge)*/
