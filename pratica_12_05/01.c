@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//pensa que vc tem uma lista estatica (Vetor) 7 | 5 | 10 | 6 | 8
+//test com: 7 | 5 | 10 | 6 | 8
 
 void bubbleSort(int *vetor, int tamanho);
 void bubbleSort(int *vetor, int tamanho){
@@ -21,13 +21,13 @@ void bubbleSort(int *vetor, int tamanho){
         fim--; // fim = fim - 1
     } while(continua != 0);
     
-}     
+}
 
-
-int main(){
+//dinamico
+/*int main(){
 
     int *vetor;
-    int tamanho, ordena = 0;
+    int tamanho;
 
     printf("=== ordenação bubble sort ===\n");
     printf("entre com o tamanho do vetor: ");
@@ -38,22 +38,33 @@ int main(){
         printf("temos um problema....\n");
         return 1;
     }
+
     for(int i = 0; i < tamanho; i++){
         printf("entre com o valor para a posicao %d: ", i);
         scanf("%d", &vetor[i]);
     }
 
-    
+    bubbleSort(vetor, tamanho);
+
+    printf("====vetor ordenado====\n");
+    for(int i = 0; i < tamanho; i++){
+        printf("| %d |", vetor[i]);
+
+    }
+    printf("\n");
+
 
     return 0;
 }
+*/
 
-
-/*int vetor[] = {7, 5, 10, 6, 8};
+int main(){
+    int vetor[] = {7, 5, 10, 6, 8};
 
     printf("=== bubble sort ===\n");
     bubbleSort(vetor, 5);
     for(int i = 0; i < 5; i++){
         printf("%d ", vetor[i]);
     }
-    */
+
+}
