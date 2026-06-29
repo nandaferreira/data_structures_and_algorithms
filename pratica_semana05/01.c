@@ -19,7 +19,7 @@ void adicionarAresta(Grafo *g, int origem, int destino, int peso){
     No *novo = malloc(sizeof(No));
     novo ->destino = destino;
     novo ->peso = peso;
-    novo ->proximo =;
+    novo ->proximo;
 }
 
 //complexidade: O(n)
