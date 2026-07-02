@@ -17,4 +17,5 @@ int buscaHash_SemColisao(Hash *ha, int mat, struct aluno *al);
 int insereHash_EnderAberto(Hash *ha, struct aluno al);
 int buscaHash_EnderAberto(Hash *ha, int mat, struct aluno *al);
 int chaveDivisao(int chave, int TABLE_SIZE);
+int chaveMultiplicacao(int chave, int TABLE_SIZE);
 
