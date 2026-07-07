@@ -1,6 +1,6 @@
 /*por questão de desempenho, a tabela Hash irá armazenar só o endereço para a estrutura que contém os dados, e não os dados em si.
 Isso evita o gasto excessivo de memória, pois na tabela os elementos ficam dispersos, então várias posições do array podem não possuir
-nenhum dado. Assim, se armazenasse uma struct teríamos uma grande quantidade de memória desperdiçada. Para evitar qisso, usamos um array
+nenhum dado. Assim, se armazenasse uma struct teríamos uma grande quantidade de memória desperdiçada. Para evitar isso, usamos um array
 de ponteiros (que ocupa menos memória que a struct) e à medida que os elementos são inseridos na tabela, realiza-se a alocação daquele 
 único elemento.*/
 
@@ -16,10 +16,10 @@ typedef struct hash{
 //cria tabela
 Hash *criaHash(int TABLE_SIZE){
     Hash* ha = (Hash*)malloc(sizeof(Hash));
-    if(ha !=NULL){
+    if(ha !=NULL){ // se a alocação funcionar
         int i;
         ha -> TABLE_SIZE = TABLE_SIZE; // ha = (*ha).TABLE_SIZE
-        ha -> itens = (struct aluno**)malloc(TABLE_SIZE*sizeof(struct aluno*));
+        ha -> itens = (struct aluno**)malloc(TABLE_SIZE*sizeof(struct aluno*)); 
 
         if(ha -> itens == NULL){
             free(ha);
@@ -32,7 +32,7 @@ Hash *criaHash(int TABLE_SIZE){
         
     }
     return ha;
-}
+}   //então se 
 //===========================================================================================================================================
 
 //apagar tabela
