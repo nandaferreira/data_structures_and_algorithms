@@ -16,14 +16,14 @@ Hash* criaHash(int TABLE_SIZE){
         int i;
 
         ha->TABLE_SIZE = TABLE_SIZE; // (*ha).TABLE_SIZE = TABLE_SIZE;
-        ha -> itens = (Aluno**);
-            malloc(TABLE_SIZE*(sizeof(struct aluno*)));
+        ha -> itens = (struct aluno**);
+        malloc(TABLE_SIZE*(sizeof(struct aluno*)));
 
-            if(ha-> itens == NULL){
-                free(ha);
-                printf("\n====memoria liberada======\n");
-                return NULL;
-            }
+        if(ha-> itens == NULL){
+            free(ha);
+            printf("\n====memoria liberada======\n");
+            return NULL;
+        }
 
             ha -> qtd = 0;
 
