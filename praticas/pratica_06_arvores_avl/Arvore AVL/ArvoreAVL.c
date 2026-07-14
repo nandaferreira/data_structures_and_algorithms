@@ -56,7 +56,7 @@ int estaVazia_ArvAVL(ArvAVL *raiz){
     if(*raiz == NULL)
         return 1;
     return 0;
-}
+} // qual a diferença entre verificar se raiz está vazia com a verificão de *raiz?
 
 int totalNO_ArvAVL(ArvAVL *raiz){
     if (raiz == NULL)
