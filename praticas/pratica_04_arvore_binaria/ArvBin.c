@@ -8,6 +8,16 @@ typedef struct NO{
     NO* dir;
 }NO;
 
+//criar novo NO
+
+NO* criarNo(int valor){
+    NO* novo = (NO*)malloc(sizeof(NO));
+    novo->info = valor;
+    novo->esq = NULL;
+    novo->dir = NULL;
+    return novo;
+}
+
 //cria arvore
 ArvBin* cria_ArvBin(){
     ArvBin* raiz;
@@ -114,6 +124,16 @@ void preOrdem_ArvBin(ArvBin* raiz){
     preOrdem_ArvBin(&((*raiz)-> dir));
 }
 
+
+void preOrdem_NO(NO* raiz){
+    if(raiz == NULL){
+        return -1;
+    }
+    printf("\n%d", raiz->info);
+    preOrdem_NO(&((raiz)->esq));
+    preOrdem_NO(&((raiz)->dir));
+
+}
 //em-ordem
 //1 - recebe arvore como parametro (ok)
 //2 - verifica se eh valida (ok)
