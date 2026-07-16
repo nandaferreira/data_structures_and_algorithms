@@ -44,7 +44,6 @@ void libera_ArvBin(ArvBin* raiz){
     }
 }
 
-
 //estaVazia
 // Uma ávore binária será considerada vazia sempre que o conteúdo da sua 'raiz' apontar para a constante NULL
 
@@ -70,10 +69,18 @@ int totalNO_ArvBin(ArvBin* raiz){
 
 }
 
-//inserir elemento
-//remover elemento
-//busca elemento
-//calcula altura
-//preOrdem
-//emOrdem
-//posOrdem
+int altura_ArvBin(ArvBin* raiz){
+    if(raiz ==NULL){
+        return 0;
+    }else if(*raiz == NULL){
+        return 0;
+    }
+    int alt_esq = altura_ArvBin(&((*raiz)-> esq));
+    int alt_dir = altura_ArvBin(&((*raiz)-> dir));
+
+    if(alt_esq > alt_dir){
+        return (alt_esq + 1);
+    }
+    else
+        return (alt_dir + 1);
+}
