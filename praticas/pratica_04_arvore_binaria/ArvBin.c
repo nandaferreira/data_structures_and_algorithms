@@ -4,7 +4,7 @@
 
 typedef struct NO{
     NO* esq;
-    int dado;
+    int info;
     NO* dir;
 }NO;
 
@@ -70,7 +70,7 @@ int totalNO_ArvBin(ArvBin* raiz){
 }
 
 int altura_ArvBin(ArvBin* raiz){
-    if(raiz ==NULL){
+    if(raiz == NULL){
         return 0;
     }else if(*raiz == NULL){
         return 0;
@@ -83,4 +83,75 @@ int altura_ArvBin(ArvBin* raiz){
     }
     else
         return (alt_dir + 1);
+    
+}
+
+/*====Percorrendo uma árvore
+Em árvores binárias é muito comum percorrer todos os seus nós, executando alguma ação em cada nó. Essa ação pode ser imprimir o valor do nó, modificar
+o valor, remover o valor, etc. Não existe uma ordem "natural" de se percorrer todos os nós de uma árvore binária. Existem os percursos:
+- pre-ordem
+- em-ordem
+- pos-ordem*/
+
+//pre-ordem (void)
+
+//1 - recebe arvore como parametro (raiz)
+//2 - verifica se eh valida 
+// 3- verifica se eh vazia
+// 4- executa o percurso (nesse caso, pre-ordem)
+// 4.1 - imprime o valor associado ao no
+// 4.2 - chama a funcao recursivamente pra percorrer a subarvore da esq
+// 4.3 - chama a funcao recursivamente pra percorrer a subarvore da dir
+
+void preOrdem_ArvBin(ArvBin* raiz){
+    if(raiz == NULL){
+        return 1;
+    }else if(*raiz == NULL){
+        return 1;
+    }
+    printf("\n%d", (*raiz)->info);
+    preOrdem_ArvBin(&((*raiz)->esq));
+    preOrdem_ArvBin(&((*raiz)-> dir));
+}
+
+//em-ordem
+//1 - recebe arvore como parametro (ok)
+//2 - verifica se eh valida (ok)
+//3 - verifica se eh vazia (ok)
+//4- se nao invalida/vazia , executa percurso
+//4.1 - imprime valor do NO associado
+//4.2 - visita a subarvore direita
+
+
+void emOrdem_ArvBin(ArvBin* raiz){
+    if(raiz == NULL){
+        return 1;
+    }else if(*raiz == NULL){
+        return 1;
+    }
+    emOrdem_ArvBin(&((*raiz)-> esq));
+    printf("\n%d", (*raiz)->info);
+    emOrdem_ArvBin(&((*raiz)->dir));
+
+
+}
+
+//pos-ordem
+//1- recebe arvore como parametro(raiz)
+//2-verifica se eh valida (raiz)
+// 3- verifica se eh vazia (*raiz)
+// 4- nao eh valida/vazia, executa o percurso
+// 4.1 - chama a funcao recursivamente pra percorrer a subarvore da esquerda
+// 4.2 - chama a funcao recursivamente pra percorrer a subarvore da direita
+// 4.3 - imprime valor do NO
+
+void posOrdem_ArvBin(ArvBin* raiz){
+    if(raiz == NULL){
+        return 1;
+    } else if(*raiz == NULL){
+        return 1;}
+
+    posOrdem_ArvBin(&((*raiz)->esq));
+    posOrdem_ArvBin(&((*raiz)->dir));
+    printf("\n%d", (*raiz)-> info);
 }

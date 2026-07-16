@@ -1,4 +1,4 @@
-typedef struct NO* ArvBin;
+typedef struct NO* ArvBin; //estrutura de NOs
 
 ArvBin* cria_ArvBin();
 void libera_ArvBin(ArvBin* raiz); //apaga estrutura da arvore
