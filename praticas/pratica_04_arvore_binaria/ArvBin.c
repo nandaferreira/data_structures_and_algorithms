@@ -70,9 +70,6 @@ int totalNO_ArvBin(ArvBin* raiz){
 
 }
 
-
-
-
 //inserir elemento
 //remover elemento
 //busca elemento
