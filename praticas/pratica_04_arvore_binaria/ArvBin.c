@@ -96,6 +96,18 @@ int altura_ArvBin(ArvBin* raiz){
     
 }
 
+int contarNos(NO* raiz){
+    if(raiz == NULL){
+        return 1;
+    }
+    
+    int total_esq = contarNos(&((raiz)->esq));
+    int total_dir = contarNos(&((raiz)->dir));
+    return ((total_esq + total_dir)+1);
+
+}
+
+
 /*====Percorrendo uma árvore
 Em árvores binárias é muito comum percorrer todos os seus nós, executando alguma ação em cada nó. Essa ação pode ser imprimir o valor do nó, modificar
 o valor, remover o valor, etc. Não existe uma ordem "natural" de se percorrer todos os nós de uma árvore binária. Existem os percursos:

@@ -8,7 +8,7 @@ int estaVazia_ArvBin(ArvBin* raiz); //remove um elemento
 int totalNO_ArvBin(ArvBin* raiz); //contagem de total de NOs da arvore
 int altura_ArvBin(ArvBin* raiz); //qual a altura
 int consulta_ArvBin(ArvBin* raiz, int valor); //consulta se um elemento X pertence a arvore
-void preOrdem_ArvBin(ArvBin* raiz);
-void emOrdem_ArvBin(ArvBin* raiz);
-void posOrdem_ArvBin(ArvBin* raiz);
+void preOrdem_ArvBin(ArvBin* raiz); //percurso pre-ordem
+void emOrdem_ArvBin(ArvBin* raiz); //percurso em-ordem
+void posOrdem_ArvBin(ArvBin* raiz); //percurso pos-ordem
 
