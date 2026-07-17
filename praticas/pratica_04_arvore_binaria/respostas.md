@@ -3,49 +3,70 @@
 ### Atividade 1 - Construção e percursos recursivos
 
 **Pré-ordem**
-
 ```
-void preOrdem_NO(NO* raiz){
+void preOrdem(No* raiz){
+    if(raiz == NULL){
+        return 1;
+    }
+    printf("\n%d", raiz->info);
+    preOrdem(raiz->esquerdo);
+    preOrdem(raiz->direito);
+}
+```
+***
+**Em ordem**
+```
+void emOrdem(No* raiz){
+    if(raiz == NULL){
+        return 1;
+    }
+
+    emOrdem(raiz->esquerdo);
+    printf("\n%d", raiz->info);
+    emOrdem(raiz->direito);
+}
+```
+***
+**Pos Ordem**
+```
+void posOrdem(No* raiz){
+    if(raiz == NULL){
+        return 1;
+    }
+
+    posOrdem(raiz->esquerdo);
+    posOrdem(raiz->direito);
+    printf("\n%d", raiz->info);
+}
+***
+```
+**Contagem de total de Nos**
+```
+int contaNos(No* raiz){
     if(raiz == NULL){
         return 1;}
 
-    printf("\n%d", raiz->info);
-    preOrdem_NO(&((raiz)->esq));
-    preOrdem_NO(&((raiz)->dir));
+    int total_esq = contaNos(raiz->esquerdo);
+    int total_dir = contaNos(raiz->direito);
+    return ((total_esq + total_dir)+ 1);
 }
 ```
-
-**Em ordem**
-
+***
+**Altura da arvore**
 ```
-void emOrdem_NO(NO* raiz){
-    if(raiz == NULL){
-        return 1;
-    }
-    
-    emOrdem_NO(&((raiz)->esq));
-    printf("\n%d", raiz->info);
-    emOrdem_NO(&((raiz)->dir));
-}
-```
-
-**Pos Ordem**
-
-```
-void posOrdem_NO(NO* raiz){
+int altura(No* raiz){
     if(raiz == NULL){
         return 1;
     }
 
-    posOrdem_NO(&((raiz)->esq));
-    posOrdem_NO(&((raiz)->dir));
-    printf("\n%d", raiz->info);
+    int alt_esq = altura(raiz->esquerdo);
+    int alt_dir = altura(raiz->direito);
+
+    if(alt_esq > alt_dir){
+        return (alt_esq + 1);
+    }else{
+        return (alt_dir +1);
+    }
 }
-
-```
-
-```
-
-
 ```
 
