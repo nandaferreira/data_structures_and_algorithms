@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "arvore_bin.h"
+#include <stdbool.h>
 
 int main(){
     No* raiz = NULL;
@@ -29,7 +30,9 @@ int main(){
                         break;
                     }
 
-                    case 3:{printf("\naltura da arvore: %d\n", alturaArvore(raiz));}
+                    case 3:
+                        printf("\naltura da arvore: %d\n", alturaArvore(raiz));
+                    
                     
 
                     case 4:{

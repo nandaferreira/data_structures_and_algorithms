@@ -78,3 +78,38 @@ int alturaArvore(No* raiz){
     }
 }
 
+No* inserirABB(No* raiz, int valor){
+    if(raiz == NULL){
+        return criarNo(valor);
+    }
+
+    if(valor < raiz->info){
+        raiz->esquerdo = inserirABB(raiz->esquerdo, valor);
+    }else if(valor > raiz->info){
+        raiz->direito = inserirABB(raiz->direito, valor);
+    }
+
+    return raiz;
+}
+
+bool buscarABB(No* raiz, int alvo){
+    if(raiz == NULL){
+        return false;
+    }else if(alvo == raiz->info){
+        return true;
+    }else if(alvo < raiz->info){
+        return buscarABB(raiz->esquerdo, alvo);
+    }else{
+        return buscarABB(raiz->direito, alvo);
+    }
+}
+
+void liberarArvore(No* raiz){
+    if(raiz == NULL){
+        return;
+    }
+
+    liberarArvore(raiz->esquerdo);
+    liberarArvore(raiz->direito);
+    free(raiz);
+}

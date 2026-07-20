@@ -1,5 +1,6 @@
 #ifndef ARVORE_BIN_H
 #define ARVORE_BIN_H
+#define bool _Bool
 
 
 typedef struct No No;
@@ -11,5 +12,8 @@ void posOrdem(No* raiz);
 int contarNos(No* raiz);
 int alturaArvore(No* raiz); // retorna a altura da árvore (maior distancia da raiz até a folha)
 //main
+No* inserirABB(No* raiz, int valor);
+bool buscarABB(No* raiz, int alvo);
+void liberarArvore(No* raiz);
 
 #endif
